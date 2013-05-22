@@ -9,45 +9,36 @@
     <base href="<%= @base_url %>"/>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="http://projectmeniscus.org/css/bootstrap.min.css">
 </head>
 <body>
-    <header class="navbar blue navbar-fixed-top">
+ <div class="container">
+
+<div class="masthead">
+    <h1>
+        <img src="http://projectmeniscus.org/img/Meniscus-Logo-Small.png" />&nbsp;&nbsp;&nbsp;<a href="http://projectmeniscus.org" style="text-decoration: none;">Project Meniscus Open Sprint Issues</a>
+    </h1>
+    
+    <div class="navbar">
         <div class="navbar-inner">
-            <div class="container-fluid">
-                <ul class="nav pull-left">
-                    <li><a><i class="icon-white icon-fire"></i> Burndown App</a></li>
-                </ul>
-                <ul class="nav pull-right">
-                    <li><a><i class="icon-white icon-book"></i> <%= @project %></a></li>
+            <div class="container">
+                <ul class="nav">
+                   <li><a href="burndown"><i class="icon-signal icon-white"></i> Burn Down</a></li>
+                    <li><a href="http://huboard.projectmeniscus.org"><i class="icon-th-large icon-white"></i> Hub Board</a></li>
+                    <li  class="active"><a href="#"><i class="icon-list icon-white"></i>Issue Quick List</a></li>
+                    
+                    <li><a href='http://jenkins.projectmeniscus.org/job/Meniscus/'>
+                        <img src='http://jenkins.projectmeniscus.org/job/Meniscus/badge/icon'></a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </header>
-    
-    <section class="container-fluid pad40"> 
-        <section class="row-fluid">
-            <div class="span2 sideBar">
-                <br>
-                <ul>
-                    <li>
-                        <figure>
-                            <a href="burndown"><i class="icon-signal"></i> Burndown Chart</a>
-                        </figure>
-                    </li>
-                    <li class="active">
-                        <figure>
-                            <a href="issues"><i class="icon-tasks"></i> Issues</a>
-                        </figure>
-                    </li>
-                </ul>
-            </div>
+    </div><!-- /.navbar -->
 
-            <section class="span10 content borBox">
                 <% if @issues.length > 0: %>                
                     <div class="row-fluid">
                         <div class="page-header">
-                            <h1>List of outstanding issues</h1>
+                            <h1>Still Open:</h1>
                         </div>
                     </div>
                     <br>
@@ -93,8 +84,6 @@
                         </div>
                     </div>
                 <% end %>
-            </section>
-        </section>
-    </section>
+                </div>
 </body>
 </html>

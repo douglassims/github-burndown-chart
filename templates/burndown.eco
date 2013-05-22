@@ -10,62 +10,64 @@
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/rickshaw.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!--  <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+     <link rel="stylesheet" type="text/css" href="http://projectmeniscus.org/css/bootstrap.min.css">
 
     <script src="js/d3.min.js"></script>
     <script src="js/d3.layout.min.js"></script>
     <script src="js/rickshaw.min.js"></script>
+     <style type="text/css">
+        body {
+            padding: 20px;
+                   }
+
+            /* Custom container */
+        .container {
+            margin: 0 auto;
+            width: 100%;
+        }
+        .container > hr {
+            margin: 60px 0;
+        }
+.rickshaw_graph .x_tick.glow .title, .rickshaw_graph .y_ticks.glow text {
+    color: whitesmoke;
+    fill: whitesmoke;
+    text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.1), 1px -1px 0 rgba(255, 255, 255, 0.1), 1px 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(255, 255, 255, 0.1), 1px 0 0 rgba(255, 255, 255, 0.1), -1px 0 0 rgba(255, 255, 255, 0.1), -1px -1px 0 rgba(255, 255, 255, 0.1);
+}
+    </style>
 </head>
 <body>
-    <header class="navbar blue navbar-fixed-top">
+   <div class="container">
+
+<div class="masthead">
+    <h1>
+        <img src="http://projectmeniscus.org/img/Meniscus-Logo-Small.png" />&nbsp;&nbsp;&nbsp;<a href="http://projectmeniscus.org" style="text-decoration: none;">Project Meniscus</a>
+    </h1>
+    
+    <div class="navbar">
         <div class="navbar-inner">
-            <div class="container-fluid">
-                <ul class="nav pull-left">
-                    <li><a><i class="icon-white icon-fire"></i> Burndown App</a></li>
-                </ul>
-                <ul class="nav pull-right">
-                    <li><a><i class="icon-white icon-book"></i> <%= @project %></a></li>
+            <div class="container">
+                <ul class="nav">
+                    <li class="active"><a href="#"><i class="icon-signal icon-white"></i> Burn Down</a></li>
+		    <li><a href="http://meniscus.herokuapp.com/ProjectMeniscus/meniscus/backlog"> Backlog</a></li>
+                   <li><a href="http://meniscus.herokuapp.com/ProjectMeniscus/meniscus/board"><i class="icon-signal icon-white"></i> Tasks</a></li>
+                        
+                    <li><a href='http://jenkins.projectmeniscus.org/job/Meniscus/'>
+                        <img src='http://jenkins.projectmeniscus.org/job/Meniscus/badge/icon'></a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </header>
-    
-    <section class="container-fluid pad40"> 
-        <section class="row-fluid">
-            <div class="span2 sideBar">
-                <br>
-                <ul>
-                    <li class="active">
-                        <figure>
-                            <a href="burndown"><i class="icon-signal"></i> Burndown Chart</a>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <a href="issues"><i class="icon-tasks"></i> Issues</a>
-                        </figure>
-                    </li>
-                </ul>
-            </div>
+    </div><!-- /.navbar -->
 
-            <section class="span10 content borBox">
-                <div class="row-fluid">
-                    <div class="page-header">
-                        <h1>Burndown chart <small>showing actual vs. ideal velocity on each day</small></h1>
-                    </div>
-                </div>
-                <br>
-
-                <div class="row-fluid">
-                    <div class="span12">
-                        <div id="chart"></div>
-                        <div id="timeline"></div>
-                    </div>
-                </div>
-            </section>
-        </section>
-    </section>
-
+    <div class="row-fluid">
+        <div class="span12">
+            <div id="chart"></div>
+            <div id="timeline"></div>
+        </div>
+    </div>
+           
+</div>
 <script>
 (function() {
     var now = new Date().getTime();

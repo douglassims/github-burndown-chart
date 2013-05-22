@@ -221,6 +221,6 @@ app.router.path '/issues', ->
 fs.readFile "config.yml", "utf8", (err, data) ->
     Issues.config = yaml.load data
 
-    app.start process.env.PORT, (err) ->
+    app.start 8081, (err) ->
         throw err if err
         console.log "Listening on port #{app.server.address().port}"
